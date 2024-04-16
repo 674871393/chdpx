@@ -1,6 +1,6 @@
 /* eslint-disable*/
 
-import { QInput, QSelect } from 'quasar';
+import { QInput, QSelect,QTable,QBtn } from 'quasar';
 import { boot } from 'quasar/wrappers';
 
 export default boot(() => {
@@ -13,6 +13,14 @@ export default boot(() => {
     outlined: true,
     dense: true,
     stackLabel: true,
+    'options-dense':true
+  });
+  SetComponentDefaults(QTable, {
+    outlined: true,
+    dense: true,
+  });
+  SetComponentDefaults(QBtn, {
+    dense: true,
   });
 });
 

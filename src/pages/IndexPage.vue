@@ -4,11 +4,10 @@
     <q-list>
       <q-item>
         <q-item-section>
-          <q-file
+          <q-input
             v-model="states.path"
             placeholder="请选择游戏路径"
             readonly
-            ref="fileRef"
           />
         </q-item-section>
         <q-item-section avatar>
@@ -31,7 +30,7 @@
       </q-item>
     </q-list>
 
-    <div class="table-wrap">
+    <div class="pt-8px">
       <q-table
         :rows="states.table.rows"
         :columns="states.table.columns"
@@ -116,7 +115,7 @@ const states = reactive({
   ],
   table: {
     columns: [
-      { name: 'pid', align: 'center', label: 'pid', field: 'pid' },
+      { name: 'pid', align: 'center', label: 'PID', field: 'pid' },
       {
         name: 'zoneServer',
         align: 'center',
@@ -165,16 +164,15 @@ const states = reactive({
   },
 });
 
-const fileRef = ref(null);
 
 const methods = {
   // TODO: 这里要调用本地路径
-  async doChoosePath() {
-    console.log(fileRef.value.pickFiles());
+  doChoosePath() {
   },
   // TODO: 启动游戏
   doStartGame(){
     console.log(states.zoneServer);
+    console.log(states.path);
   }
 };
 </script>
